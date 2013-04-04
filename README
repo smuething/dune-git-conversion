@@ -1,7 +1,10 @@
 You need Python 2.7+, uncrustify and a recent Git to run this.
 
 - Adjust the path to uncrustify in uncrustify.py
-- unxz the dump file in dumps
+- Download the packed dump file of dune-grid from
+  http://www.dune-project.org/download/dumps/dune-grid.svn.xz
+  and place it in the dumps/ directory
+- unxz the dump file in dumps/
 - run reposurgeon
 - In reposurgeon, run "script dune-grid.rs"
 - Get a coffee! ;-)
