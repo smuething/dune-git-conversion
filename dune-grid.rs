@@ -76,3 +76,6 @@ branch rk-diss rename refs/heads/p/robertk/diss
 !rm -f dune-grid-indent-ignored.log
 
 filter =B & 1..$ ./uncrustify-rs.py -d dune-grid-indent-errors.log -i dune-grid-indent-ignored.log -e --fix-alberta-macro -m -r %EVENT% %PATHS%
+
+prefer git
+rebuild dune-grid.git
