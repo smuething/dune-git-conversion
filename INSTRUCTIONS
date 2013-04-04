@@ -1,0 +1,17 @@
+You need Python 2.7+, uncrustify and a recent Git to run this.
+
+- Adjust the path to uncrustify in uncrustify.py
+- unxz the dump file in dumps
+- run reposurgeon
+- In reposurgeon, run "script dune-grid.rs"
+- Get a coffee! ;-)
+- When it's done, close reposurgeon with CTRL-D
+- The converted repository is in dune-grid.git
+
+The conversion process places two log files in the current directory,
+one containing the blobs that could not be reindented and one containing
+the blobs that were left untouched. The contents of the files is the
+"event id" used by reposurgeon for the blob and all the file paths the
+blob is know as.
+
+The log files for my conversion run are in the directory dune-grid-logs
