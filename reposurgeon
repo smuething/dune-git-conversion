@@ -3301,7 +3301,8 @@ class StreamParser:
                         else:
                             if debug_enable(DEBUG_TOPOLOGY):
                                 complain("lookback for %s failed" % latest)
-                            raise Fatal("couldn't find a branch root for the copy of %s at r%s." % (latest.path, latest.revision))
+                            if not global_options["svn_accept_orphan_branches"]:
+                                raise Fatal("couldn't find a branch root for the copy of %s at r%s." % (latest.path, latest.revision))
             # We're done, add all the new commits
             self.repo.events += newcommits
             self.repo.declare_sequence_mutation()
@@ -5509,6 +5510,9 @@ read and write time in order to reduce the anount of disk space required while
 editing; this may be useful for large repositories. No effect if the edit
 input was a dump stream; in that case, reposurgeon doesn't make on-disk blob
 copies at all (it points into sections of the input stream instead).
+"""),
+        ("svn_accept_orphan_branches", """\
+    If set, do not bail when it is not possible to find a branch point for a new branch.
 """),
         )
     class LineParse:
