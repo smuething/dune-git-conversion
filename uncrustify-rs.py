@@ -14,7 +14,7 @@ uncrustify_binary = '/Users/muethisn/Downloads/UniversalIndentGUI_macx/indenters
 uncrustify_config = 'uncrustify.cfg'
 
 # regexp for files that will have their trailing whitespace stripped
-cleanup_files = re.compile(r'.*(Makefile.am|configure.ac|dune.module|README|README.SVN|COPYING|INSTALL|TODO|\.tex|\.m4|\.pc\.in)$')
+cleanup_files = re.compile(r'.*(Makefile.am|configure.ac|dune.module|README|README.SVN|COPYING|INSTALL|TODO|\.cmake|CMakeLists.txt|\.pc\.in)$')
 
 # regexp for files that will be reindented using uncrustify
 reindent_files = re.compile(r'.*\.(cpp|hpp|cc|hh|c|h)$')
