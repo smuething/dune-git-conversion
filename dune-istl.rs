@@ -81,6 +81,7 @@ branch pdelab-course-201203 rename refs/heads/releases/pdelab-course-201203
 branch cmake rename refs/heads/feature/cmake
 branch mn-devel rename refs/heads/p/mnolte/devel
 branch rk-diss rename refs/heads/p/robertk/diss
+branch speedup_amg_build rename refs/heads/feature/speedup-amg-build
 
 !rm -f dune-istl-indent-errors.log
 !rm -f dune-istl-indent-ignored.log
