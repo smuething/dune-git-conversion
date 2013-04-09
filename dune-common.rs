@@ -94,7 +94,7 @@ branch rk-diss rename refs/heads/p/robertk/diss
 !rm -f dune-common-indent-ignored.log
 
 # reindent files in history
-filter =B & 1..$ ./uncrustify-rs.py -d dune-common-indent-errors.log -i dune-common-indent-ignored.log -e -m -r %EVENT% %PATHS%
+filter =B & 1..$ ./uncrustify-rs.py -d dune-common-indent-errors.log -i dune-common-indent-ignored.log --fix-alberta-macro -e -m -r %EVENT% %PATHS%
 
 # create Git repository
 prefer git
