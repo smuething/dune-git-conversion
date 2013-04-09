@@ -6,7 +6,7 @@ set svn_accept_orphan_branches
 script loadrepo.rs dune-grid-dev-howto
 
 # delete bogus commits created by releases/ -> tags/ rename
-# delete =C & <102.1>..<102.2> obliterate tagback
+delete =C & <102.1>..<102.2> obliterate tagback
 
 # delete and recreate all tags that existed at the time of the
 # releases/ -> tags/ rename to fix their metadata
