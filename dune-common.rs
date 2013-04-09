@@ -33,6 +33,10 @@ tagify 1.2.2 <1.2.2>
 tagify 2.0 <2.0>
 tagify 2.0.1 <2.0.1>
 
+# reposurgeon mis-tags the 2.2.0 release. Clean that up
+tag 2.2.0 delete
+tagify 2.2.0 <6787>
+
 # Bake SVN revisions into commit messages
 edit =C & 1..$ ./add-fossil-ids.py
 
