@@ -8,6 +8,11 @@ script loadrepo.rs dune-grid-dev-howto
 # delete bogus commits created by releases/ -> tags/ rename
 # delete =C & <102.1>..<102.2> obliterate tagback
 
+# delete and recreate all tags that existed at the time of the
+# releases/ -> tags/ rename to fix their metadata
+tag 1.2 delete
+tagify 1.2 <1.2>
+
 # rename 2.1.0 tag for consistency
 tag release-2.1.0 rename 2.1.0
 

@@ -14,8 +14,21 @@ tag pdelab-course-201203-root rename pdelab-course-201203
 # rename 2.1.0 tag for consistency
 tag release-2.1.0 rename 2.1.0
 
-# reposurgeon only creates release branches for these two
-# releases - add corresponding tags
+# delete and recreate all tags that existed at the time of the
+# releases/ -> tags/ rename to fix their metadata
+tag 1.0 delete
+tagify 1.0 <1.0>
+tag 1.0.1 delete
+tagify 1.0.1 <1.0.1>
+tag 1.1 delete
+tagify 1.1 <1.1>
+tag 1.1.1 delete
+tagify 1.1.1 <1.1.1>
+tag 1.2 delete
+tagify 1.2 <1.2>
+
+# reposurgeon only creates release branches for this release
+# releases - add corresponding tag
 tagify 2.0 <2.0>
 
 # Bake SVN revisions into commit messages
