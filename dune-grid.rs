@@ -1,6 +1,9 @@
 # load SVN dump file, apply author map
 script loadrepo.rs dune-grid
 
+# fix incorrect parent ordering on initial branch commit
+edit <8025> perl -pi -e "s/^Parents:.*$/Parents: :22908 :21694 :22472 :22093 :22911 :21395/"
+
 # delete bogus commits created by releases/ -> tags/ rename
 delete =C & <7728.1>..<7728.9> obliterate tagback
 delete =C & <7568.1>..<7568.7> obliterate tagback
