@@ -1,5 +1,7 @@
-# fix incorrect parent ordering on initial branch commit
+# fix incorrect parent ordering on several merge commits
 edit <8025> perl -pi -e "s/^Parents:.*$/Parents: :22908 :21694 :22472 :22093 :22911 :21395/"
+edit <7442> perl -pi -e "s/^Parents:.*$/Parents: :21079 :21093/"
+edit <8808> perl -pi -e "s/^Parents:.*$/Parents: :25399 :24754 :21395 :25249 :23825 :24539 :21694 :24475 :24469 :24117 :24989/;" -e "s/:25300 :23994 :24098 :24993 :23067 :22472 :24400 :25399/:25300 :23994 :24098 :24993 :23067 :22472 :24400/"
 
 # delete bogus commits created by releases/ -> tags/ rename
 delete =C & <7728.1>..<7728.9> obliterate tagback
