@@ -58,7 +58,6 @@ branch release-2.1 rename refs/heads/releases/2.1
 branch release-2.2 rename refs/heads/releases/2.2
 branch cmake rename refs/heads/feature/cmake
 branch develop-r1006-introduce-dune-geometry rename refs/heads/feature/introduce-dune-geometry
-branch mn-devel rename refs/heads/p/mnolte/devel
 
 # remove mn-devel branch, there were never any commits to it
 branch mn-devel delete
