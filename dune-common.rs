@@ -1,6 +1,3 @@
-# load SVN dump file, apply author map
-script loadrepo.rs dune-common
-
 # delete bogus commits created by releases/ -> tags/ rename
 delete =C & <6524.1>..<6524.9> obliterate tagback
 
@@ -92,14 +89,3 @@ branch develop-r6501-introduce-dune-geometry rename refs/heads/feature/introduce
 branch ldflags-transition rename refs/heads/feature/ldlfags-transition
 branch mn-devel rename refs/heads/p/mnolte/devel
 branch rk-diss rename refs/heads/p/robertk/diss
-
-# remove existing indentation logs
-!rm -f dune-common-indent-errors.log
-!rm -f dune-common-indent-ignored.log
-
-# reindent files in history
-filter =B & 1..$ ./uncrustify-rs.py -d dune-common-indent-errors.log -i dune-common-indent-ignored.log --fix-alberta-macro -e -m -r %EVENT% %PATHS%
-
-# create Git repository
-prefer git
-rebuild dune-common.git

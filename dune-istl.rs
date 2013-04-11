@@ -1,6 +1,3 @@
-# load SVN dump file, apply author map
-script loadrepo.rs dune-istl
-
 # delete bogus commits created by releases/ -> tags/ rename
 delete =C & <1505.1>..<1505.8> obliterate tagback
 
@@ -82,14 +79,3 @@ branch cmake rename refs/heads/feature/cmake
 branch mn-devel rename refs/heads/p/mnolte/devel
 branch rk-diss rename refs/heads/p/robertk/diss
 branch speedup_amg_build rename refs/heads/feature/speedup-amg-build
-
-# remove existing indentation logs
-!rm -f dune-istl-indent-errors.log
-!rm -f dune-istl-indent-ignored.log
-
-# reindent files in history
-filter =B & 1..$ ./uncrustify-rs.py -d dune-istl-indent-errors.log -i dune-istl-indent-ignored.log -e -m -r %EVENT% %PATHS%
-
-# create Git repository
-prefer git
-rebuild dune-istl.git

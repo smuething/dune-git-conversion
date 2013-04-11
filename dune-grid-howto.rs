@@ -1,6 +1,3 @@
-# load SVN dump file, apply author map
-script loadrepo.rs dune-grid-howto
-
 # delete bogus commits created by releases/ -> tags/ rename
 delete =C & <363.1>..<363.6> obliterate tagback
 
@@ -67,14 +64,3 @@ branch release-2.1 rename refs/heads/releases/2.1
 branch release-2.2 rename refs/heads/releases/2.2
 branch cmake rename refs/heads/feature/cmake
 branch mn-devel rename refs/heads/p/mnolte/devel
-
-# remove existing indentation logs
-!rm -f dune-grid-howto-indent-errors.log
-!rm -f dune-grid-howto-indent-ignored.log
-
-# reindent files in history
-filter =B & 1..$ ./uncrustify-rs.py -d dune-grid-howto-indent-errors.log -i dune-grid-howto-indent-ignored.log -e -m -r %EVENT% %PATHS%
-
-# create Git repository
-prefer git
-rebuild dune-grid-howto.git

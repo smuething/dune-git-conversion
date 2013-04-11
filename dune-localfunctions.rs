@@ -1,6 +1,3 @@
-# load SVN dump file, apply author map
-script loadrepo.rs dune-localfunctions
-
 # There is no branch for this release in the repository, so
 # we just turn the root tag into the actual release tag
 tag pdelab-course-201203-root rename pdelab-course-201203
@@ -65,14 +62,3 @@ branch mn-devel rename refs/heads/p/mnolte/devel
 
 # remove mn-devel branch, there were never any commits to it
 branch mn-devel delete
-
-# remove existing indentation logs
-!rm -f dune-localfunctions-indent-errors.log
-!rm -f dune-localfunctions-indent-ignored.log
-
-# reindent files in history
-filter =B & 1..$ ./uncrustify-rs.py -d dune-localfunctions-indent-errors.log -i dune-localfunctions-indent-ignored.log -e -m -r %EVENT% %PATHS%
-
-# create Git repository
-prefer git
-rebuild dune-localfunctions.git

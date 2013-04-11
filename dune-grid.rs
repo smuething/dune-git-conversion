@@ -1,6 +1,3 @@
-# load SVN dump file, apply author map
-script loadrepo.rs dune-grid
-
 # fix incorrect parent ordering on initial branch commit
 edit <8025> perl -pi -e "s/^Parents:.*$/Parents: :22908 :21694 :22472 :22093 :22911 :21395/"
 
@@ -94,14 +91,3 @@ branch gg-fix rename refs/heads/feature/gg-fix
 branch return_geometry_by_value rename refs/heads/feature/return-geometry-by-value
 branch mn-devel rename refs/heads/p/mnolte/devel
 branch rk-diss rename refs/heads/p/robertk/diss
-
-# remove existing indentation logs
-!rm -f dune-grid-indent-errors.log
-!rm -f dune-grid-indent-ignored.log
-
-# reindent files in history
-filter =B & 1..$ ./uncrustify-rs.py -d dune-grid-indent-errors.log -i dune-grid-indent-ignored.log -e --fix-alberta-macro -m -r %EVENT% %PATHS%
-
-# create Git repository
-prefer git
-rebuild dune-grid.git
