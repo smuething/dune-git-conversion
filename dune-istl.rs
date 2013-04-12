@@ -91,3 +91,4 @@ branch cmake rename refs/heads/feature/cmake
 branch mn-devel rename refs/heads/p/mnolte/devel
 branch rk-diss rename refs/heads/p/robertk/diss
 branch speedup_amg_build rename refs/heads/feature/speedup-amg-build
+branch dune-istl-amg-novlap rename feature/amg-novlap
