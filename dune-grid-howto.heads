@@ -1,0 +1,14 @@
+master trunk
+feature/cmake branches/cmake
+releases/2.1 branches/release-2.1
+releases/2.2 branches/release-2.2
+1.0 tags/1.0
+1.0.1 tags/1.0.1
+1.1 tags/1.1
+1.1.1 tags/1.1.1
+1.2 tags/1.2
+2.0 tags/2.0
+2.1.0 tags/2.1.0
+2.1.1 tags/2.1.1
+2.2.0 tags/2.2.0
+2.2.1 tags/2.2.1
