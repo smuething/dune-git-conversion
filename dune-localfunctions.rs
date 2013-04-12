@@ -1,3 +1,6 @@
+# fix incorrect parent ordering on merge commits
+edit <885> perl -pi -e "s/^Parents:.*$/Parents: :3547 :3529 :3499 :3545 :3539 :3579 :3493 :3507/"
+
 # There is no branch for this release in the repository, so
 # we just turn the root tag into the actual release tag
 tag pdelab-course-201203-root rename pdelab-course-201203
