@@ -12,20 +12,27 @@ delete =C & <7568.1>..<7568.7> obliterate tagback
 merge <7727>,<7737>
 
 # rename 2.1.0 tag for consistency
-tag release-2.1.0 rename 2.1.0
+tag release-2.1.0 rename v2.1.0
 
 # Due to the split deletion and creation of the releases/ and
 # tags/ directories, reposurgeon does not create tags for our
 # releases, so we add them manually here.
-tagify 1.0 <1.0>
-tagify 1.0.1 <1.0.1>
-tagify 1.1 <1.1>
-tagify 1.1.1 <1.1.1>
-tagify 1.2 <1.2>
-tagify 1.2.1 <1.2.1>
-tagify 1.2.2 <1.2.2>
-tagify 2.0 <2.0>
-tagify 2.0.1 <2.0.1>
+tagify v1.0 <1.0>
+tagify v1.0.1 <1.0.1>
+tagify v1.1 <1.1>
+tagify v1.1.1 <1.1.1>
+tagify v1.2 <1.2>
+tagify v1.2.1 <1.2.1>
+tagify v1.2.2 <1.2.2>
+tagify v2.0 <2.0>
+tagify v2.0.1 <2.0.1>
+
+# Add 'v' prefix to remaining version tags
+tag 2.1.1 rename v2.1.1
+tag 2.2beta1 rename v2.2beta1
+tag 2.2beta2 rename v2.2beta2
+tag 2.2.0 rename v2.2.0
+tag 2.2.1 rename v2.2.1
 
 # create tag for pdelab-course-201203 release
 tagify pdelab-course-201203 <pdelab-course-201203>

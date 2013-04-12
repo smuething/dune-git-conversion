@@ -6,27 +6,35 @@ edit <1793> perl -pi -e "s/^Parents:.*$/Parents: :4788 :4627 :4556 :4719 :4402 :
 delete =C & <1505.1>..<1505.8> obliterate tagback
 
 # rename 2.1.0 tag for consistency
-tag release-2.1.0 rename 2.1.0
+tag release-2.1.0 rename v2.1.0
 
 # delete and recreate all tags that existed at the time of the
 # releases/ -> tags/ rename to fix their metadata
 tag 1.0 delete
-tagify 1.0 <1.0>
+tagify v1.0 <1.0>
 tag 1.0.1 delete
-tagify 1.0.1 <1.0.1>
+tagify v1.0.1 <1.0.1>
 tag 1.1 delete
-tagify 1.1 <1.1>
+tagify v1.1 <1.1>
 tag 1.1.1 delete
-tagify 1.1.1 <1.1.1>
+tagify v1.1.1 <1.1.1>
 tag 1.2 delete
-tagify 1.2 <1.2>
+tagify v1.2 <1.2>
 tag 1.2.1 delete
-tagify 1.2.1 <1.2.1>
+tagify v1.2.1 <1.2.1>
 tag 1.2.2 delete
-tagify 1.2.2 <1.2.2>
+tagify v1.2.2 <1.2.2>
 
 # Add missing tag for 2.0 release
-tagify 2.0 <2.0>
+tagify v2.0 <2.0>
+
+# Add 'v' prefix to remaining version tags
+tag 2.1.1 rename v2.1.1
+tag 2.2beta1 rename v2.2beta1
+tag 2.2beta2 rename v2.2beta2
+tag 2.2.0 rename v2.2.0
+tag 2.2.1 rename v2.2.1
+
 
 # create tag for pdelab-course-201203 release
 tagify pdelab-course-201203 <pdelab-course-201203>

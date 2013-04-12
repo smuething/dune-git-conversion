@@ -11,16 +11,23 @@ delete =C & <102.1>..<102.2> obliterate tagback
 # delete and recreate all tags that existed at the time of the
 # releases/ -> tags/ rename to fix their metadata
 tag 1.2 delete
-tagify 1.2 <1.2>
+tagify v1.2 <1.2>
 
 # rename 2.1.0 tag for consistency
-tag release-2.1.0 rename 2.1.0
+tag release-2.1.0 rename v2.1.0
 
 # creating missing tag for 2.0 release
-tagify 2.0 <2.0>
+tagify v2.0 <2.0>
 
 # creating missing tag for 2.1.1 release
-tagify 2.1.1 :260
+tagify v2.1.1 :260
+
+# Add 'v' prefix to remaining version tags
+tag 2.2beta1 rename v2.2beta1
+tag 2.2beta2 rename v2.2beta2
+tag 2.2.0 rename v2.2.0
+tag 2.2.1 rename v2.2.1
+
 
 # Bake SVN revisions into commit messages
 edit =C & 1..$ ./add-fossil-ids.py

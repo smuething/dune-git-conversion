@@ -7,7 +7,7 @@ edit <6048> perl -pi -e "s/^Parents:.*$/Parents: :16352 :16401 :16255 :16179 :16
 delete =C & <6524.1>..<6524.9> obliterate tagback
 
 # rename 2.1.0 tag for consistency
-tag release-2.1.0 rename 2.1.0
+tag release-2.1.0 rename v2.1.0
 
 # There is no branch for this release in the repository, so
 # we just turn the root tag into the actual release tag
@@ -16,28 +16,34 @@ tag pdelab-course-201203-root rename pdelab-course-201203
 # delete and recreate all tags that existed at the time of the
 # releases/ -> tags/ rename to fix their metadata
 tag 1.0 delete
-tagify 1.0 <1.0>
+tagify v1.0 <1.0>
 tag 1.0.1 delete
-tagify 1.0.1 <1.0.1>
+tagify v1.0.1 <1.0.1>
 tag 1.1 delete
-tagify 1.1 <1.1>
+tagify v1.1 <1.1>
 tag 1.1.1 delete
-tagify 1.1.1 <1.1.1>
+tagify v1.1.1 <1.1.1>
 tag 1.2 delete
-tagify 1.2 <1.2>
+tagify v1.2 <1.2>
 tag 1.2.1 delete
-tagify 1.2.1 <1.2.1>
+tagify v1.2.1 <1.2.1>
 tag 1.2.2 delete
-tagify 1.2.2 <1.2.2>
+tagify v1.2.2 <1.2.2>
 
 # reposurgeon only creates release branches for these two
 # releases - add corresponding tags
-tagify 2.0 <2.0>
-tagify 2.0.1 <2.0.1>
+tagify v2.0 <2.0>
+tagify v2.0.1 <2.0.1>
 
 # reposurgeon mis-tags the 2.2.0 release. Clean that up
 tag 2.2.0 delete
-tagify 2.2.0 <6787>
+tagify v2.2.0 <6787>
+
+# rename remaining tags to add 'v' prefix
+tag 2.1.1 rename v2.1.1
+tag 2.2beta1 rename v2.2beta1
+tag 2.2beta2 rename v2.2beta2
+tag 2.2.1 rename v2.2.1
 
 # Bake SVN revisions into commit messages
 edit =C & 1..$ ./add-fossil-ids.py

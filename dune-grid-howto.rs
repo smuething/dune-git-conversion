@@ -9,24 +9,32 @@ tag pdelab-course-201203-root rename pdelab-course-201203
 # delete =C & <1023.1>..<1023.2> obliterate tagback
 
 # rename 2.1.0 tag for consistency
-tag release-2.1.0 rename 2.1.0
+tag release-2.1.0 rename v2.1.0
 
 # delete and recreate all tags that existed at the time of the
 # releases/ -> tags/ rename to fix their metadata
 tag 1.0 delete
-tagify 1.0 <1.0>
+tagify v1.0 <1.0>
 tag 1.0.1 delete
-tagify 1.0.1 <1.0.1>
+tagify v1.0.1 <1.0.1>
 tag 1.1 delete
-tagify 1.1 <1.1>
+tagify v1.1 <1.1>
 tag 1.1.1 delete
-tagify 1.1.1 <1.1.1>
+tagify v1.1.1 <1.1.1>
 tag 1.2 delete
-tagify 1.2 <1.2>
+tagify v1.2 <1.2>
 
 # reposurgeon only creates release branches for this release
 # releases - add corresponding tag
-tagify 2.0 <2.0>
+tagify v2.0 <2.0>
+
+# Add 'v' prefix to remaining version tags
+tag 2.1.1 rename v2.1.1
+tag 2.2beta1 rename v2.2beta1
+tag 2.2beta2 rename v2.2beta2
+tag 2.2.0 rename v2.2.0
+tag 2.2.1 rename v2.2.1
+
 
 # Bake SVN revisions into commit messages
 edit =C & 1..$ ./add-fossil-ids.py

@@ -12,12 +12,20 @@ delete =C & <1023.1>..<1023.2> obliterate tagback
 merge <98>,<112>
 
 # rename 2.1.0 tag for consistency
-tag release-2.1.0 rename 2.1.0
+tag release-2.1.0 rename v2.1.0
 
 # reposurgeon only creates release branches for these two
 # releases - add corresponding tags
-tagify 2.0 <2.0>
-tagify 2.0.1 <2.0.1>
+tagify v2.0 <2.0>
+tagify v2.0.1 <2.0.1>
+
+# Add 'v' prefix to remaining version tags
+tag 2.1.1 rename v2.1.1
+tag 2.2beta1 rename v2.2beta1
+tag 2.2beta2 rename v2.2beta2
+tag 2.2.0 rename v2.2.0
+tag 2.2.1 rename v2.2.1
+
 
 # Bake SVN revisions into commit messages
 edit =C & 1..$ ./add-fossil-ids.py
