@@ -4,5 +4,5 @@ p/mnolte/devel branches/mn-devel
 releases/2.2 branches/release-2.2
 releases/2.2-cmake branches/release-cmake-2.2
 pdelab-course-201203 branches/pdelab-course-201203
-2.2.0 tags/2.2.0
-2.2.1 tags/2.2.1
+v2.2.0 tags/2.2.0
+v2.2.1 tags/2.2.1
