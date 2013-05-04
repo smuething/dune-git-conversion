@@ -9,15 +9,13 @@ def event_splitter(s):
     s.readline()
 
     event = []
-    try:
-        for line in s:
-            if line == EVENT_DELIMITER:
-                yield event
-                event = []
-            else:
-                event.append(line)
-    except StopIteration:
-        yield event
+    for line in s:
+        if line == EVENT_DELIMITER:
+            yield event
+            event = []
+        else:
+            event.append(line)
+    yield event
 
 
 with open(sys.argv[1],'r') as input, tempfile.NamedTemporaryFile(delete=False) as output:
