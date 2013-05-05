@@ -57,7 +57,8 @@ branch release-2.2 rename refs/heads/releases/2.2
 !rm -f dune-grid-dev-howto-indent-ignored.log
 
 # reindent files in history
-filter =B & 1..$ ./uncrustify-rs.py -d dune-grid-dev-howto-indent-errors.log -i dune-grid-dev-howto-indent-ignored.log -e -m -r %EVENT% %PATHS%
+# filter =B & 1..$ ./uncrustify-rs.py -d dune-grid-dev-howto-indent-errors.log -i dune-grid-dev-howto-indent-ignored.log -e -m -r %EVENT% %PATHS%
+script $1.rs dune-grid-dev-howto
 
 # create Git repository
 prefer git
